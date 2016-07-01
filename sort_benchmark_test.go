@@ -80,3 +80,24 @@ func BenchmarkMaxHeapSort(b *testing.B) {
 		MaxHeap_sort(arr, 10)
 	}
 }
+
+func BenchmarkCountingSort(b *testing.B)  {
+	for i := 0; i < b.N; i++ {
+		arr := []int{5, 4, 8, 2, 1, 6, 7, 3, 9, 10}
+		Counting_sort(arr, 10)
+	}
+}
+
+func BenchmarkBucketSort(b *testing.B)  {
+	for i := 0; i < b.N; i++ {
+		arr := []int{5, 4, 8, 2, 1, 6, 7, 3, 9, 10}
+		Bucket_sort(arr, 10)
+	}
+}
+
+func BenchmarkRadixSort(b *testing.B)  {
+	for i := 0; i < b.N; i++ {
+		arr := []int{15, 34, 68, 72, 11, 6, 97, 83, 29, 40}
+		Radix_sort(arr, 10)
+	}
+}

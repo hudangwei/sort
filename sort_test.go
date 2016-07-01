@@ -103,3 +103,33 @@ func TestMaxHeapSort(t *testing.T) {
 		}
 	}
 }
+
+func TestCountingSort(t *testing.T)  {
+	unsorted, sorted := initList()
+	Counting_sort(unsorted, len(unsorted))
+	for i, v := range unsorted {
+		if sorted[i] != v {
+			t.Error("counting sort error")
+		}
+	}
+}
+
+func TestBucketSort(t *testing.T)  {
+	unsorted, sorted := initList()
+	Bucket_sort(unsorted, len(unsorted))
+	for i, v := range unsorted {
+		if sorted[i] != v {
+			t.Error("bucket sort error")
+		}
+	}
+}
+
+func TestRadixSort(t *testing.T)  {
+	unsorted, sorted := initList()
+	Radix_sort(unsorted, len(unsorted))
+	for i, v := range unsorted {
+		if sorted[i] != v {
+			t.Error("radix sort error")
+		}
+	}
+}
